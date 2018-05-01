@@ -25,6 +25,8 @@ public class HomeActivity extends BaseActivity<HomePresenter, HomeStateModel> im
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
         binding.movies.setAdapter(new MoviesAdapter(this));
         binding.movies.setLayoutManager(new LinearLayoutManager(this));
+
+        setSupportActionBar(binding.toolbar);
     }
 
     @Override
@@ -39,6 +41,8 @@ public class HomeActivity extends BaseActivity<HomePresenter, HomeStateModel> im
 
     @Override
     public void onStateChanged(HomeStateModel stateModel) {
+        super.onStateChanged(stateModel);
+
         showMovies(stateModel.movieList);
         showLoading(stateModel.loadingInProgress);
     }

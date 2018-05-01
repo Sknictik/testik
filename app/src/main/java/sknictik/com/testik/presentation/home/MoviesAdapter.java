@@ -41,7 +41,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     @Override
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        return new MovieViewHolder(DataBindingUtil.inflate(inflater, R.layout.item_movie, parent, false));
+        return new MovieViewHolder((ItemMovieBinding) DataBindingUtil.inflate(inflater, R.layout.item_movie, parent, false));
     }
 
     @Override
@@ -77,6 +77,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             //Actually could have done that via BindingAdapter
             Picasso.with(binding.getRoot().getContext())
                     .load(movie.getPreview())
+                    .fit()
                     .centerCrop()
                     .into(binding.preview);
         }

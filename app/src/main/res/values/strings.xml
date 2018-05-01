@@ -4,4 +4,7 @@
     <string name="common_loading">Загрузка…</string>
 
     <string name="home_movie_load_error">Не удалось загрузить список видео: %s</string>
+
+    <string name="movie_failed_to_show">Не удалось показать видео: %s</string>
+    <string name="movie_play">Старт</string>
 </resources>

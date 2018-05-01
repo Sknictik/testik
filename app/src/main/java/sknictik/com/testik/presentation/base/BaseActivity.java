@@ -2,6 +2,7 @@ package sknictik.com.testik.presentation.base;
 
 import android.app.Dialog;
 import android.support.v7.app.AlertDialog;
+import android.view.MenuItem;
 
 import etr.android.reamp.mvp.ReampAppCompatActivity;
 import etr.android.reamp.mvp.ReampPresenter;
@@ -34,6 +35,17 @@ public abstract class BaseActivity<P extends BasePresenter<SM>, SM extends BaseS
                 .setMessage(new ResourceMessageFormatter(this).format(message))
                 .setPositiveButton(android.R.string.ok, null)
                 .show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }
