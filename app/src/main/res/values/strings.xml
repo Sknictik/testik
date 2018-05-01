@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">testik</string>
+    <string name="appName">testik</string>
+    <string name="common_error">Ошибка</string>
+    <string name="common_loading">Загрузка…</string>
+
+    <string name="home_movie_load_error">Не удалось загрузить список видео: %s</string>
 </resources>
